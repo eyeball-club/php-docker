@@ -31,8 +31,6 @@ RUN apt-get update \
         php8.2-redis \ 
         php8.2-soap \ 
         php8.2-sqlite3 \ 
-        php8.2-swoole \ 
-        php8.2-xdebug \
         php8.2-fpm \
     && apt-get clean
 
