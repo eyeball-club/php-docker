@@ -14,6 +14,9 @@ RUN apt-get update \
         unzip \
         git \ 
         wget \
+        nano \
+        vim \
+        zsh \
         php8.2-apcu \
         php8.2-cli \
         php8.2-curl \
@@ -33,6 +36,12 @@ RUN apt-get update \
         php8.2-sqlite3 \ 
         php8.2-fpm \
     && apt-get clean
+
+# Backup the original file
+RUN cp /etc/adduser.conf /etc/adduser.conf.bak
+
+# Change the value of DSHELL to /bin/zsh
+RUN sed -i 's/^DSHELL=.*/DSHELL=\/bin\/zsh/' /etc/adduser.conf
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
