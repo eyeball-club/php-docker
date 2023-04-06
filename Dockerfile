@@ -17,6 +17,7 @@ RUN apt-get update \
         nano \
         vim \
         zsh \
+        cron \
         php8.2-apcu \
         php8.2-cli \
         php8.2-curl \
