@@ -33,6 +33,7 @@ jobs:
         with:
           push: true
           context: .
+          platforms: linux/amd64,linux/arm64
           tags: eyeballapp/php:8.2,eyeballapp/php:latest
           build-args: |
             NO_CACHE=true
