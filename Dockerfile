@@ -52,7 +52,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* ~/.composer
 
 COPY overrides.conf /etc/php/8.2/fpm/pool.d/z-overrides.conf
 
-RUN wget http://pear.php.net/go-pear.phar; php go-pear.phar
+#RUN wget http://pear.php.net/go-pear.phar; php go-pear.phar
 
 RUN composer global config --no-plugins allow-plugins.dg/composer-frontline true
 RUN composer global require dg/composer-frontline
