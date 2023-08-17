@@ -36,6 +36,7 @@ RUN apt-get update \
         php8.2-soap \ 
         php8.2-sqlite3 \ 
         php8.2-fpm \
+        php-excimer \
     && apt-get clean
 
 # Backup the original file
