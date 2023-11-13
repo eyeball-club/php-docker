@@ -51,9 +51,9 @@ RUN composer self-update
 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* ~/.composer
 
-COPY overrides.conf /etc/php/8.2/fpm/pool.d/z-overrides.conf
 COPY php-global-overrides.ini /etc/php/8.2/fpm/conf.d/z-overrides.ini
 COPY php-global-overrides.ini /etc/php/8.2/cli/conf.d/z-overrides.ini
+COPY overrides.conf /etc/php/8.2/fpm/pool.d/z-overrides.conf
 
 #RUN wget http://pear.php.net/go-pear.phar; php go-pear.phar
 
