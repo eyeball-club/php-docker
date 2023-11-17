@@ -1,0 +1,4 @@
+FROM eyeballapp/php-dev:8.2
+
+COPY php-global-overrides.ini /etc/php/8.2/fpm/conf.d/z-overrides.ini
+COPY php-global-overrides.ini /etc/php/8.2/cli/conf.d/z-overrides.ini

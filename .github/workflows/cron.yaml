@@ -28,12 +28,23 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - 
-        name: Build & Push
+        name: Build & Push Dev
         uses: docker/build-push-action@v3
         with:
           push: true
           context: .
+          file: Dockerfile.dev
           platforms: linux/amd64,linux/arm64
-          tags: eyeballapp/php:8.2,eyeballapp/php:latest
+          tags: eyeballapp/php-dev:8.2,eyeballapp/php-dev:latest
           build-args: |
             NO_CACHE=true
+
+      - 
+        name: Build & Push Prod
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: .
+          file: Dockerfile.prod
+          platforms: linux/amd64,linux/arm64
+          tags: eyeballapp/php:8.2,eyeballapp/php:latest
