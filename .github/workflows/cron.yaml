@@ -40,6 +40,18 @@ jobs:
             NO_CACHE=true
 
       - 
+        name: Build & Push Dev 8.3
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: .
+          file: Dockerfile.php8.3
+          platforms: linux/amd64,linux/arm64
+          tags: eyeballapp/php:8.3,eyeballapp/php:beta
+          build-args: |
+            NO_CACHE=true
+
+      - 
         name: Build & Push Prod
         uses: docker/build-push-action@v3
         with:
@@ -48,3 +60,4 @@ jobs:
           file: Dockerfile.prod
           platforms: linux/amd64,linux/arm64
           tags: eyeballapp/php:8.2,eyeballapp/php:latest
+
