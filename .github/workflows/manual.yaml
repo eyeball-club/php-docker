@@ -48,7 +48,7 @@ jobs:
           context: .
           file: Dockerfile.php8.3
           platforms: linux/amd64,linux/arm64
-          tags: eyeballapp/php:8.3,eyeballapp/php:beta
+          tags: eyeballapp/php-dev:8.3,eyeballapp/php-dev:beta
           build-args: |
             NO_CACHE=true
 
